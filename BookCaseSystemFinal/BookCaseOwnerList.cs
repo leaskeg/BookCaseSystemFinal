@@ -27,8 +27,6 @@ namespace BookCaseSystemFinal
 
         public void CreateBookCaseOwner(string name, string email, int phone, int id)
         {
-
-            
             bookCaseOwner.Name = name;
             bookCaseOwner.Email = email;
             bookCaseOwner.Phone = phone;
