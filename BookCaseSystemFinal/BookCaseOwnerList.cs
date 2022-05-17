@@ -8,14 +8,16 @@ namespace BookCaseSystemFinal
 {
     public class BookCaseOwnerList
     {
+
         BookCaseOwner bookCaseOwner = new BookCaseOwner();
         List<BookCaseOwner> bookCaseOwnerList = new List<BookCaseOwner>();
-        int counter { get; set; } = 0;
+        
+        //int counter { get; set; } = 0;
         public void PrintList()
         {
-            for (int i = 0; i < bookCaseOwnerList.Count; i++)
+            for (int bookCaseOwnerCount = 0; bookCaseOwnerCount < bookCaseOwnerList.Count; bookCaseOwnerCount++)
             {
-                Console.WriteLine($"Index: {i} Navn: {bookCaseOwnerList[i].Name} Email: {bookCaseOwnerList[i].Email} ");
+                Console.WriteLine($"Index: {bookCaseOwnerCount}\nNavn: {bookCaseOwnerList[bookCaseOwnerCount].Name}\nEmail: {bookCaseOwnerList[bookCaseOwnerCount].Email}\nTelefon: {bookCaseOwnerList[bookCaseOwnerCount].Phone}\nID: {bookCaseOwnerList[bookCaseOwnerCount].BookCaseOwnerID}\n");
 
             }
         }
@@ -25,11 +27,25 @@ namespace BookCaseSystemFinal
             PrintList();
         }
 
-        public void CreateBookCaseOwner(string name, string email, int phone, int id)
+        /*public void CreateBookCaseOwner(string name, string email, int phone, int bookCaseOwnerId)
         {
-
-            bookCaseOwnerList.Add(new BookCaseOwner() { Name = name, Email = email, Phone = phone });
-            counter++;
+            
+            bookCaseOwnerList.Add(new BookCaseOwner() { Name = name, Email = email, Phone = phone, BookCaseOwnerID = bookCaseOwnerId });
+            //counter++;
+        }
+        */
+        public void CreateBookCaseOwner()
+        {
+            Console.WriteLine("Indtast navn: ");
+            string name = Console.ReadLine();
+            Console.WriteLine("Indtast email: ");
+            string email = Console.ReadLine();
+            Console.WriteLine("Indtast phone: ");
+            int phone = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Indtast ID: ");
+            int bookCaseOwnerId = Convert.ToInt32(Console.ReadLine());
+            bookCaseOwnerList.Add(new BookCaseOwner() { Name = name, Email = email, Phone = phone, BookCaseOwnerID = bookCaseOwnerId });
+            //counter++;
         }
 
     }
