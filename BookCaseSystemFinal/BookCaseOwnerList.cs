@@ -15,7 +15,7 @@ namespace BookCaseSystemFinal
         {
             for (int i = 0; i < bookCaseOwnerList.Count; i++)
             {
-                Console.WriteLine($"Index: {i} Navn: {bookCaseOwnerList[0].Name}");
+                Console.WriteLine($"Index: {i} Navn: {bookCaseOwnerList[i].Name} Email: {bookCaseOwnerList[i].Email} ");
 
             }
         }
@@ -27,11 +27,8 @@ namespace BookCaseSystemFinal
 
         public void CreateBookCaseOwner(string name, string email, int phone, int id)
         {
-            bookCaseOwner.Name = name;
-            bookCaseOwner.Email = email;
-            bookCaseOwner.Phone = phone;
-            bookCaseOwner.ID = id;
-            bookCaseOwnerList.Add(bookCaseOwner);
+
+            bookCaseOwnerList.Add(new BookCaseOwner() { Name = name, Email = email, Phone = phone });
             counter++;
         }
 
