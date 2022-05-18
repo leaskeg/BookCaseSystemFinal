@@ -8,8 +8,7 @@ namespace BookCaseSystemFinal
 {
     public class BookCaseOwnerList
     {
-        //Opretter et nyt bookcaseowner objekt så vi får adgang
-        BookCaseOwner bookCaseOwner = new BookCaseOwner();
+
         //Laver en ny liste af BookCaseOwner ved navn bookCaseOwnerList
         List<BookCaseOwner> bookCaseOwnerList = new List<BookCaseOwner>();
         
