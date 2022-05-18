@@ -4,22 +4,43 @@ namespace BookCaseSystemFinal
 {
     internal class Program
     {
+        
         static void Main(string[] args)
         {
+            //opretter et reollejer liste objekt
             BookCaseOwnerList ownerList = new BookCaseOwnerList();
-
-            /*ownerList.CreateBookCaseOwner("Kenneth", "Kenneth@IO.dk", 12345678, 77777);
-            ownerList.CreateBookCaseOwner("Hans", "Hans@IO.dk", 23456789, 66666);
-            ownerList.CreateBookCaseOwner("Ruth", "Ruth@IO.dk", 34567890, 55555);
-            ownerList.CreateBookCaseOwner("Thomas", "Thomas@IO.dk", 45678901, 44444);
-            ownerList.CreateBookCaseOwner("Erik", "Erik@IO.dk", 56789012, 333333);
-            ownerList.CreateBookCaseOwner("Lene", "Lene@IO.dk", 67890123, 22222);
-            */
-            ownerList.CreateBookCaseOwner();
-            ownerList.ShowList();
-
-
-                Console.ReadLine();
+            //opretter et menu objekt
+            Menu menu = new Menu();
+            //Kører en endless loop (senere burde der tilføjes et afslutningspunkt)
+            while (true)
+            {
+                //Opretter 2 menu punkter
+                menu.MenuCreate("Udskriv liste", 1);
+                menu.MenuCreate("Opret reollejer", 2);
+                //Tildeler variable menu.Input en Console.ReadLine for at få bruger input i vores variable
+                menu.Input = Console.ReadLine();
+                //Opretter en switch som tager vores menu.Input ind som parameter (den tjekker hvad bruger har skrevet)
+                switch (menu.Input)
+                {
+                    //Case 1 viser den liste af reollejer
+                    case "1":
+                        ownerList.ShowList();
+                        Console.ReadLine();
+                        Console.Clear();
+                        break;
+                    //Opretter vi en ny reollejer
+                    case "2":
+                        ownerList.CreateBookCaseOwner();
+                        Console.Clear();
+                        break;
+                    //Hvis brugeren trykker på noget forkert, får de denne besked
+                    default:
+                        Console.WriteLine("Forkert valg\nTryk enter for at prøve igen");
+                        Console.ReadLine();
+                        Console.Clear();
+                        break;
+                }
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace BookCaseSystemFinal
         BookCaseOwner bookCaseOwner = new BookCaseOwner();
         List<BookCaseOwner> bookCaseOwnerList = new List<BookCaseOwner>();
         
-        //int counter { get; set; } = 0;
+        
         public void PrintList()
         {
             for (int bookCaseOwnerCount = 0; bookCaseOwnerCount < bookCaseOwnerList.Count; bookCaseOwnerCount++)
@@ -27,13 +27,6 @@ namespace BookCaseSystemFinal
             PrintList();
         }
 
-        /*public void CreateBookCaseOwner(string name, string email, int phone, int bookCaseOwnerId)
-        {
-            
-            bookCaseOwnerList.Add(new BookCaseOwner() { Name = name, Email = email, Phone = phone, BookCaseOwnerID = bookCaseOwnerId });
-            //counter++;
-        }
-        */
         public void CreateBookCaseOwner()
         {
             Console.WriteLine("Indtast navn: ");
@@ -45,7 +38,7 @@ namespace BookCaseSystemFinal
             Console.WriteLine("Indtast ID: ");
             int bookCaseOwnerId = Convert.ToInt32(Console.ReadLine());
             bookCaseOwnerList.Add(new BookCaseOwner() { Name = name, Email = email, Phone = phone, BookCaseOwnerID = bookCaseOwnerId });
-            //counter++;
+            
         }
 
     }
