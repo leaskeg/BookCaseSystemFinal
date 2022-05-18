@@ -44,7 +44,7 @@ namespace BookCaseSystemFinal
             int phone = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Indtast ID: ");
             int bookCaseOwnerId = Convert.ToInt32(Console.ReadLine());
-            //Tilføjer vores nye reollejer til vores bookCaseOwnerList
+            //Tilføjer vores nye reollejer objekt til vores bookCaseOwnerList
             bookCaseOwnerList.Add(new BookCaseOwner() { Name = name, Email = email, Phone = phone, BookCaseOwnerID = bookCaseOwnerId });
             
         }

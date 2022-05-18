@@ -13,7 +13,7 @@ namespace BookCaseSystemFinal
         {
             //opretter et reollejer liste objekt
             BookCaseOwnerList ownerList = new BookCaseOwnerList();
-            //opretter et menu objekt
+
             //Kører en endless loop (senere burde der tilføjes et afslutningspunkt)
             while (true)
             {
@@ -45,9 +45,10 @@ namespace BookCaseSystemFinal
                 }
             }
         }
-
+        //Opretter en ny metode som indtager Title og menuID
         public void MenuCreate(string Title, int menuID)
         {
+            //Udskriver menuID og Title til consolen
             Console.WriteLine(menuID+"." + " " + Title);
         }
 
