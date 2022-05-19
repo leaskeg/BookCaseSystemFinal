@@ -35,21 +35,25 @@ namespace BookCaseSystemFinal
         public void CreateBookCaseOwner()
         {
             //Beder brugeren indtaste informationerne på den nye reollejer
-            Console.WriteLine("Indtast navn: ");
-            string name = Console.ReadLine();
-            Console.WriteLine("Indtast email: ");
-            string email = Console.ReadLine();
-            Console.WriteLine("Indtast phone: ");
-            int phone = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Indtast ID: ");
-            int bookCaseOwnerId = Convert.ToInt32(Console.ReadLine());
-            //Tilføjer vores nye reollejer objekt til vores bookCaseOwnerList
-            bookCaseOwnerList.Add(new BookCaseOwner() { Name = name, Email = email, Phone = phone, BookCaseOwnerID = bookCaseOwnerId });
-            
+            try
+            {
+                Console.WriteLine("Indtast navn: ");
+                string name = Console.ReadLine();
+                Console.WriteLine("Indtast email: ");
+                string email = Console.ReadLine();
+                Console.WriteLine("Indtast phone: ");
+                int phone = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Indtast ID: ");
+                int bookCaseOwnerId = Convert.ToInt32(Console.ReadLine());
+                //Tilføjer vores nye reollejer objekt til vores bookCaseOwnerList
+                bookCaseOwnerList.Add(new BookCaseOwner() { Name = name, Email = email, Phone = phone, BookCaseOwnerID = bookCaseOwnerId });
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Forkert Input\nTryk på 'Enter' for at forsøge igen");
+                Console.ReadLine();
+
+            }
         }
-
     }
-
-
-
 }
