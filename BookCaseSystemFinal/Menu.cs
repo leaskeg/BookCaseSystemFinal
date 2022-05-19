@@ -27,12 +27,14 @@ namespace BookCaseSystemFinal
                 {
                     //Case 1 viser den liste af reollejer
                     case "1":
+                        Console.Clear();
                         ownerList.ShowList();
                         Console.ReadLine();
                         Console.Clear();
                         break;
                     //Opretter vi en ny reollejer
                     case "2":
+                        Console.Clear();
                         ownerList.CreateBookCaseOwner();
                         Console.Clear();
                         break;
